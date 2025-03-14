@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Transport</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="title">E-Transport</h1>
+        <div class="actions">
+            <img src="public\icon\IconNotification.svg" alt="Notification" class="notification"></img>
+            <span class="separator">|</span>
+            <div class="profile">
+                <img src="public\Images\Profile.png" alt="Profile" class="profile-img">
+                <div class="profile-info">
+                    <h1 class="name">Leslie Alexander</h1>
+                    <h2 class="position">Manager</h2>
+                </div>
+                <button class="dropdown-button"><img src="public\icon\IconArrowProfileDropdown.svg" alt="arrow"></button>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="main-container">
+        <div class="features">
+            <button class="dropdown allsite">
+                <h2>All Site</h2>
+                <img src="public/icon/IconDropdown.svg" alt="IconDropdown">
+            </button>
+            <div class="search-bar">
+                <img src="public/icon/iconSearch.svg" alt="Search">
+                <input type="search" name="search" placeholder="Search...">
+            </div>
+            <div class="filter-options">
+                <button class="dropdown-filter date-range">
+                    <h2>Last 90 Days</h2>
+                    <img src="public/icon/IconDropdown.svg" alt="filter-options">
+                </button>
+                <div class="date-picker">
+                    <img src="public/icon/IconCalendar.svg" alt="Calendar Icon" class="calendar-icon">
+                    <input type="text" id="dateRangePicker" placeholder="Select date range">
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="analytics">
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconOrderSewa.svg" alt="iconOrderSewa">
+                            <h2 class="card-title-h2">Order Sewa</h2>
+                        </div>
+                        <button class="button-card"><img src="/public/icon/iconMore.svg" alt="IconMore"></button>
+                    </div>
+                    <h1 class="card-number-h1">4034</h1>
+                    <div class="card-footer">
+                        <h3 class="percentage">+8%</h3>
+                        <h3>vs last month</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconOrderOnline.svg" alt="iconOrderOnline">
+                            <h2 class="card-title-h2">Order Online</h2>
+                        </div>
+                        <button class="button-card"><img src="/public/icon/iconMore.svg" alt="IconMore"></button>
+                    </div>
+                    <h1 class="card-number-h1">2400</h1>
+                    <div class="card-footer">
+                        <h3 class="percentage-minus">-13%</h3>
+                        <h3>vs last month</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconCostSewa.svg" alt="iconCostSewa">
+                            <h2 class="card-title-h2">Cost Sewa</h2>
+                        </div>
+                        <button class="button-card"><img src="/public/icon/iconMore.svg" alt="IconMore"></button>
+                    </div>
+                    <h1 class="card-number-h1">Rp. 320.432.342</h1>
+                    <div class="card-footer">
+                        <h3 class="percentage">+23%</h3>
+                        <h3>vs last month</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconCostOnline.svg" alt="">
+                            <h2 class="card-title-h2">Cost Online</h2>
+                        </div>
+                        <button class="button-card"><img src="/public/icon/iconMore.svg" alt="IconMore"></button>
+                    </div>
+                    <h1 class="card-number-h1">Rp. 120.432.342</h1>
+                    <div class="card-footer">
+                        <h3 class="percentage">+23%</h3>
+                        <h3>vs last month</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="map-view">
+            <nav class="map-sidebar">
+                <div class="map-header">
+                    <img src="public/icon/IconMap.svg" alt="IconMap">
+                    <h2>Map View</h2>
+                </div>
+                <div class="map-dropdown">
+                    <h2>All Site</h2>
+                    <img src="public/icon/IconDropdown.svg" alt="IconDropdown">
+                </div>
+            </nav>
+            <div class="map-content" style="width: 100%; height: 808px; position: relative;">
+                <div id="map" style="position: absolute; width: 100%; height: 100%; z-index: 0;"></div>
+                <img src="public/icon/IconFrequence.svg" alt="Frequency Icon" class="icon-frequence">
+                <div class="map-overlay">
+                    <div class="map-card">
+                        <div class="map-card-left">
+                            <div class="map-buttons">
+                                <button class="map-button"><img src="public/icon/iconLeft.svg" alt="Arrow Left"></button>
+                                <button class="map-button"><img src="public/icon/iconRight.svg" alt="Arrow Right"></button>
+                            </div>
+                            <div class="map-status">
+                                <h3>4 of 10</h3>
+                            </div>
+                        </div>
+                        <div class="map-card-right">
+                            <button class="map-button"><img src="public/icon/iconClose.svg" alt="Button Close"></button>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <h1>UID Jakarta Raya</h1>
+                        <div class="order-summary">
+                            <h2>Total Order</h2>
+                            <h4>90 Order</h4>
+                        </div>
+                        <div class="order-details">
+                            <div class="order-item">
+                                <h4><strong>70</strong> <span>Order Sewa</span></h4>
+                                <div class="distance-info">
+                                    <h4>232</h4>
+                                    <h2><strong>KM</strong></h2>
+                                </div>
+                                <div class="cost-info">
+                                    <h2><strong>Rp.</strong></h2>
+                                    <h4><strong>5.334.000</strong></h4>
+                                </div>
+                            </div>
+                            <div class="order-item">
+                                <h4><strong>70</strong> Order Online</h4>
+                                <div class="distance-info">
+                                    <h4>232</h4>
+                                    <h2><strong>KM</strong></h2>
+                                </div>
+                                <div class="cost-info">
+                                    <h2>Rp.</h2>
+                                    <h4><strong>5.334.000</strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-info">
+                            <div class="location-details">
+                                <h2>Location</h2>
+                                <h4>Mampang Jakarta</h4>
+                            </div>
+                            <h2 class="coordinate">21.684584 N, 13.426762424</h2>
+                        </div>
+
+                        <button class="details-button">
+                            Details <img src="public/icon/iconWhiteArrowRight.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <h2>All rights Reserved @2024 by <span class="footer-highlight">PT. PLN Icon Plus</span></h2>
+    </footer>
+    
+
+    <script>
+        var map = L.map('map', { zoomControl: false, attributionControl: false }).setView([-2.5489, 118.0149], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        var markers = [
+            { coords: [-6.2088, 106.8456], value: 10 },  // Jakarta
+            { coords: [-7.7956, 110.3695], value: 25 },  // Yogyakarta
+            { coords: [-6.9147, 107.6098], value: 45 },  // Bandung
+            { coords: [-5.1477, 119.4327], value: 60 },  // Makassar
+            { coords: [-0.7893, 113.9213], value: 15 },  // Kalimantan
+            { coords: [1.4927, 124.8413], value: 35 },   // Manado
+            { coords: [3.5952, 98.6722], value: 50 },    // Medan
+            { coords: [-2.9761, 104.7754], value: 75 },  // Palembang
+            { coords: [-8.6705, 115.2126], value: 90 },  // Bali
+            { coords: [-3.3285, 114.5901], value: 100 }   // Banjarmasin
+        ];
+        
+        markers.forEach(function(marker, index) {
+            let color, borderStyle = '';
+            if (marker.value <= 20) {
+                color = 'blue';
+            } else if (marker.value <= 50) {
+                color = 'green';
+            } else if (marker.value < 90) {
+                color = 'red';
+            } else {
+                color = 'red';
+                borderStyle = 'box-shadow: 0 0 8px rgba(255, 0, 0, 0.5); margin: 5px; padding: 8px;';
+            }
+            
+            L.marker(marker.coords, {
+                icon: L.divIcon({
+                    className: 'custom-marker',
+                    html: `<div class="marker-number" style="background-color: ${color}; ${borderStyle} border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">${marker.value}</div>`
+                })
+            }).addTo(map);
+        });
+
+        // Add zoom control at the bottom right
+        L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+                flatpickr("#dateRangePicker", {
+            mode: "range",
+            dateFormat: "d M Y",
+            altInput: true,
+            altFormat: "d M - d M Y",
+            locale: {
+                months: {
+                    shorthand: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+                    longhand: [
+                        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+                    ]
+                }
+            },
+            onChange: function(selectedDates, dateStr, instance) {
+                if (selectedDates.length === 2) {
+                    let startDate = flatpickr.formatDate(selectedDates[0], "d M");
+                    let endDate = flatpickr.formatDate(selectedDates[1], "d M Y");
+
+                    // Set custom format without "to"
+                    instance.altInput.value = `${startDate} - ${endDate}`;
+                }
+            }
+});
+
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Inter, sans-serif;
+        }
+        body {
+            background-color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background: #fff;
+            color: #E6E6E6;
+            padding: 0 20px;
+            border-bottom: 1px solid #E6E6E6;
+        }
+        .navbar h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #474D66;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .notification {
+            font-size: 16px;
+        }
+        .separator {
+            padding: 0 16px;
+            font-size: 18px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            padding: 5px 10px;
+        }
+        .profile-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px;
+            color: #474D66;
+        }
+        .name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .position {
+            font-size: 12px;
+            font-weight: 600;
+            color: #C1C4D6;
+        }
+        .dropdown-button {
+            width: 24px;
+            height: 24px;
+            background: #F4F6FA;
+            border: none;
+            cursor: pointer;
+        }
+        .main-container {
+            padding: 24px 16px;
+        }
+        .features {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 40px;
+        }
+        .dropdown {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 168px;
+            background: #fff;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+            border-right: none;
+        }
+        .dropdown h2 {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .dropdown img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            background: #fff;
+            padding: 6px;
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            color: #8F9582;
+        }
+        .filter-options {
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            gap: 8px;            
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+            
+        }
+        .dropdown-filter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 168px;
+            background: #fff;
+            padding: 8px;
+            border: 1px solid #E6E6E6;
+            border-bottom: none;
+            border-top: none;
+            border-left: none;
+            
+        }
+        .dropdown-filter h2 {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .date-picker {
+            display: flex;
+            align-items: center;
+            width: 184px;
+            gap: 8px;
+            font-size: 14px;
+            
+            
+        }
+        .date-picker input {
+            outline: none;
+            border: none;
+        }
+        .analytics {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+        }
+        .analytics-card {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 22%;
+        }
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+        .card-title-h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0A0D14;
+        }
+        .card-number-h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0A0D14;
+        }
+        .button-card {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .button-card img {
+            width: 24px;
+            height: 24px;
+        }
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-title img {
+            width: 24px;
+            height: 24px;
+        }
+        .card-footer {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 400;
+            color: #54565B;
+        }
+        .percentage {
+            font-weight: 600;
+            color: #14AE5C;
+            border: #14AE5C solid 1px;
+            padding: 4px 8px;
+            border-radius: 5px;
+            background-color: rgba(20, 174, 92, 0.1);
+        }
+        .percentage-minus {
+            font-weight: 600;
+            color: #FF0000;
+            border: #FF0000 solid 1px;
+            padding: 4px 8px;
+            border-radius: 5px;
+            background-color: rgba(174, 20, 20, 0.1);
+        }
+
+        .map-view {
+            display: flex;
+            flex-direction: column;
+            margin-top: 24px;
+            overflow: hidden;
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+        }
+        .map-sidebar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 16px;
+            background: #fff;
+            width: 100%;
+        }
+        .map-header {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+        }
+        .map-header h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0A0D14;
+        }
+        .map-dropdown {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 84px;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .map-dropdown h2 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #3B3D43;
+        }
+        .map-dropdown img {
+            width: 16px;
+            height: 16px;
+        }
+        .map-content {
+            position: relative;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+        .footer {
+            padding: 24px 0;
+            text-align: center;
+            background: white;
+            border-top: 1px solid #E6E6E6;
+        }
+        .footer h2 {
+            font-size: 12px;
+            font-weight: 500;
+            color: #7e8299;
+        }
+        .footer-highlight {
+            font-weight: 600;
+            color: #00b4db;
+        }
+
+        .map-content {
+            position: relative;
+        }
+        .map-overlay {
+            position: absolute;
+            top: 24px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 300px;
+            padding: 12px;
+            border-radius: 8px;
+            z-index: 1;
+        }
+        .map-card {
+            display: flex;
+            justify-content: space-between;
+        }
+        .map-card-left, .map-card-right {
+            display: flex;
+            align-items: center;
+            
+        }
+        .map-buttons {
+            display: flex;
+            gap: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .map-status {
+            margin-left: 16px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #5e6278;
+        }
+        .map-content {
+            position: absolute;
+        }
+        #map {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .map-overlay {
+            position: absolute;
+            top: 24px;
+            right: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .map-card {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            border-radius: 8px;
+            width: 280px;
+        }
+        .map-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .map-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .map-status {
+            margin-left: 16px;
+            font-size: 12px;
+        }
+        .map-info {
+            padding: 16px;
+            border-radius: 8px;
+            width: 280px;
+            font-size: 10px;
+            font-weight: 500;
+            font-style: normal;
+            color: #A2845E;
+            
+        }
+        .map-info h1 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #A2845E;
+        }
+        .map-info h2 {
+            font-size: 12px;
+            font-weight: 500;
+            color: #738299;
+        }
+        .map-info h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #181C32;
+        }
+        .order-summary {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .order-summary h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #3B3D43;
+        }
+        .order-summary h2 {
+            font-size: 12px;
+            font-weight: 500;
+            color: #3B3D43;
+        }
+        
+        .order-details {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .order-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 4px;
+            padding: 8px;
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+        }
+        .order-item h4 {
+            font-size: 12px;
+            font-weight: 500;
+            color: #3B3D43;
+        }
+        .distance-info, .cost-info {
+            display: flex;
+            gap: 8px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .distance-info h2 {
+            font-size: 12px;
+            font-weight: 500;
+            color: #3B3D43;
+        }
+        .location-info {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .location-details {
+            display: flex;
+            justify-content: space-between;
+        }
+        .coordinate {
+            text-align: right;
+        }
+                .details-button {
+            width: 100%;
+            padding: 8px;
+            gap: 4px;
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00B4DB;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .icon-frequence {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 290px;
+            height: 72px;
+            z-index: 3;
+        }
+    </style>
+</body>
+</html>
