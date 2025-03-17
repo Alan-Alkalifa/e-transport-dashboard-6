@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Transport</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="index.js" defer></script> 
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="title">E-Transport</h1>
+        <div class="actions">
+            <img src="public\icon\IconNotification.svg" alt="Notification" class="notification"></img>
+            <span class="separator">|</span>
+            <div class="profile">
+                <img src="public\Images\Profile.png" alt="Profile" class="profile-img">
+                <div class="profile-info">
+                    <h1 class="name">Leslie Alexander</h1>
+                    <h2 class="position">Manager</h2>
+                </div>
+                <button class="dropdown-button"><img src="public\icon\IconArrowProfileDropdown.svg" alt="arrow"></button>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="main-container">
+        <div class="button-options">
+            <button class="button-choice">Analytics</button>
+            <button class="button-choice">Blue Bird</button>
+            <button class="button-choice">Gojek</button>   
+            <button class="button-choice">Grab</button>
+        </div>
+
+        <div class="features">
+            <button class="dropdown allsite">
+                <h2>All Site</h2>
+                <img src="public/icon/IconDropdown.svg" alt="IconDropdown">
+            </button>
+            <div class="search-bar">
+                <img src="public/icon/iconSearch.svg" alt="Search">
+                <input type="search" name="search" placeholder="Search...">
+            </div>
+            <div class="filter-options">
+                <button class="dropdown-filter date-range">
+                    <h2>Last 90 Days</h2>
+                    <img src="public/icon/IconDropdown.svg" alt="filter-options">
+                </button>
+                <div class="date-picker">
+                    <img src="public/icon/IconCalendar.svg" alt="Calendar Icon" class="calendar-icon">
+                    <input type="text" id="dateRangePicker" placeholder="Select date range">
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="analytics">
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconTotalOrder.svg" alt="iconTotalOrder">
+                            <h2 class="card-title-h2">Total Order</h2>
+                        </div>
+                        <button class="button-card">
+                            <img src="/public/icon/IconRight.svg" alt="IconRight">
+                        </button>
+                    </div>
+        
+                    <!-- PIE CHART CONTAINER -->
+                    <div class="chart-container">
+                        <canvas id="orderChart" width="80" height="80"></canvas>
+                        <div class="chart-info">
+                            <div class="chart-label">
+                                <span class="dot blue"></span>
+                                <span>Bluebird</span>
+                                <strong>12B</strong>
+                            </div>
+                            <div class="chart-label">
+                                <span class="dot green"></span>
+                                <span>Gojek</span>
+                                <strong>255M</strong>
+                            </div>
+                            <div class="chart-label">
+                                <span class="dot teal"></span>
+                                <span>Grab</span>
+                                <strong>2T</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconCostSewa.svg" alt="iconCostSewa.svg">
+                            <h2 class="card-title-h2">Total Cost</h2>
+                        </div>
+                        <button class="button-card">
+                            <img src="/public/icon/IconRight.svg" alt="IconRight">
+                        </button>
+                    </div>
+        
+                    <!-- PIE CHART CONTAINER -->
+                    <div class="chart-container">
+                        <canvas id="orderChart" width="80" height="80"></canvas>
+                        <div class="chart-info">
+                            <div class="chart-label">
+                                <span class="dot blue"></span>
+                                <span>Bluebird</span>
+                                <strong>12B</strong>
+                            </div>
+                            <div class="chart-label">
+                                <span class="dot green"></span>
+                                <span>Gojek</span>
+                                <strong>255M</strong>
+                            </div>
+                            <div class="chart-label">
+                                <span class="dot teal"></span>
+                                <span>Grab</span>
+                                <strong>2T</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconTotalDistance.svg" alt="iconTotalDistance">
+                            <h2 class="card-title-h2">Total Disstance</h2>
+                        </div>
+                        <button class="button-card">
+                            <img src="/public/icon/IconRight.svg" alt="IconRight">
+                        </button>
+                    </div>
+        
+                    <!-- PIE CHART CONTAINER -->
+                    <div class="chart-container">
+                        <canvas id="orderChart" width="80" height="80"></canvas>
+                        <div class="chart-info">
+                            <div class="chart-label">
+                                <span class="dot blue"></span>
+                                <span>Bluebird</span>
+                                <strong>12B</strong>
+                            </div>
+                            <div class="chart-label">
+                                <span class="dot green"></span>
+                                <span>Gojek</span>
+                                <strong>255M</strong>
+                            </div>
+                            <div class="chart-label">
+                                <span class="dot teal"></span>
+                                <span>Grab</span>
+                                <strong>2T</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconAvarageDistance.svg" alt="iconAvarageDistance">
+                            <h2 class="card-title-h2">Average Cost</h2>
+                        </div>
+                        <button class="button-card">
+                            <img src="/public/icon/IconRight.svg" alt="IconRight">
+                        </button>
+                    </div>
+        
+                    <!-- PIE CHART CONTAINER -->
+                    <div class="chart-container">
+                        <canvas id="orderChart" width="80" height="80"></canvas>
+                        <div class="chart-info">
+                            <div class="chart-label">
+                                <span class="dot blue"></span>
+                                <span>Bluebird</span>
+                                <strong>12B</strong>
+                            </div>
+                            <div class="chart-label">
+                                <span class="dot green"></span>
+                                <span>Gojek</span>
+                                <strong>255M</strong>
+                            </div>
+                            <div class="chart-label">
+                                <span class="dot teal"></span>
+                                <span>Grab</span>
+                                <strong>2T</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        
+
+        <div class="analytics">
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconTotalOrder.svg" alt="iconTotalOrder">
+                            <h2 class="card-title-h2">Order</h2>
+                        </div>
+                    </div>
+                    <div class="card-number-space-between">
+                    <h1 class="card-number-h1">4034</h1>
+                    <h2>Order</h2>
+                    </div>
+                    <div class="card-footer">
+                        <h3 class="percentage">+8%</h3>
+                        <h3>vs last month</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconCostSewa.svg" alt="iconCostSewa">
+                            <h2 class="card-title-h2">Cost</h2>
+                        </div>
+                    </div>
+                    <div class="card-number-space-between">
+                    <h2 >Rp</h2>
+                    <h1 class="card-number-h1">12.094</h1>
+                    </div>
+                    <div class="card-footer">
+                        <h3 class="percentage">+8%</h3>
+                        <h3>vs last month</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconTotalDistance.svg" alt="iconTotalDistance">
+                            <h2 class="card-title-h2">Distance</h2>
+                        </div>
+                    </div>
+                    <div class="card-number-space-between">
+                    <h1 class="card-number-h1">4034</h1>
+                    <h2>Km</h2>
+                    </div>
+                    <div class="card-footer">
+                        <h3 class="percentage">+8%</h3>
+                        <h3>vs last month</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="analytics-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="public/icon/iconAvarageDistance.svg" alt="iconAvarageDistance">
+                            <h2 class="card-title-h2">Average Cost Distance</h2>
+                        </div>
+                    </div>
+                    <div class="card-number-space-between">
+                    <h2>Rp</h2>
+                    <h1 class="card-number-h1">4034</h1>
+                    <h2>/Km</h2>
+                    </div>
+                    <div class="card-footer">
+                        <h3 class="percentage">+8%</h3>
+                        <h3>vs last month</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="chart-graph">
+            <canvas id="transportChart"></canvas>
+        </div>
+        
+
+    </main>
+
+    <footer class="footer">
+        <h2>All rights Reserved @2024 by <span class="footer-highlight">PT. PLN Icon Plus</span></h2>
+    </footer>
+    
+
+</body>
+</html>
+<script>
+    const ctx = document.getElementById('transportChart').getContext('2d');
+
+    const transportChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+            datasets: [
+                {
+                    label: 'Bluebird',
+                    data: [12, 15, 14, 18, 17, 16, 15, 14],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                },
+                {
+                    label: 'Gojek',
+                    data: [10, 13, 12, 14, 13, 12, 11, 10],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                },
+                {
+                    label: 'Grab',
+                    data: [11, 14, 13, 15, 14, 13, 12, 11],
+                    backgroundColor: 'rgba(255, 206, 86, 0.6)',
+                },
+                {
+                    label: 'Average Cost Distance',
+                    data: [30, 35, 40, 45, 50, 42, 38, 55],
+                    borderColor: 'purple',
+                    borderWidth: 2,
+                    type: 'line',
+                    fill: false
+                },
+                {
+                    label: 'Average Cost Trip',
+                    data: [25, 30, 35, 40, 38, 36, 34, 33],
+                    borderColor: 'brown',
+                    borderWidth: 2,
+                    type: 'line',
+                    fill: false
+                },
+                {
+                    label: 'Cost',
+                    data: [28, 32, 37, 42, 39, 37, 35, 36],
+                    borderColor: 'gold',
+                    borderWidth: 2,
+                    type: 'line',
+                    fill: false
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const canvas = document.getElementById("orderChart");
+        const ctx = canvas.getContext("2d");
+
+        const data = [34, 32, 23]; // Data dalam persen
+        const colors = ["#00C4CC", "#007BFF", "#28A745"];
+        const total = data.reduce((sum, val) => sum + val, 0);
+
+        let startAngle = -Math.PI / 2; // Mulai dari atas
+
+        data.forEach((value, index) => {
+            const sliceAngle = (value / total) * (Math.PI * 2);
+            ctx.beginPath();
+            ctx.moveTo(40, 40); // Titik tengah
+            ctx.arc(40, 40, 40, startAngle, startAngle + sliceAngle);
+            ctx.closePath();
+            ctx.fillStyle = colors[index];
+            ctx.fill();
+            startAngle += sliceAngle;
+        });
+
+        // Tambahkan angka di dalam pie chart
+        ctx.fillStyle = "white";
+        ctx.font = "bold 10px ";
+        ctx.textAlign = "center";
+        ctx.fillText("34%", 55, 25);
+        ctx.fillText("32%", 25, 50);
+        ctx.fillText("23%", 55, 65);
+    });
+
+</script>
+
+
+<style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+body {
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background: #fff;
+    color: #E6E6E6;
+    padding: 0 20px;
+    border-bottom: 1px solid #E6E6E6;
+}
+.navbar h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #474D66;
+}
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.notification {
+    font-size: 16px;
+}
+.separator {
+    padding: 0 16px;
+    font-size: 18px;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 5px 10px;
+}
+.profile-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    color: #474D66;
+}
+.name {
+    font-size: 16px;
+    font-weight: 600;
+}
+.position {
+    font-size: 12px;
+    font-weight: 600;
+    color: #C1C4D6;
+}
+.dropdown-button {
+    width: 24px;
+    height: 24px;
+    background: #F4F6FA;
+    border: none;
+    cursor: pointer;
+}
+.main-container {
+    padding: 24px 16px;
+}
+.features {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+}
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 168px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+    border-right: none;
+}
+.dropdown h2 {
+    font-size: 14px;
+    font-weight: 500;
+}
+.dropdown img {
+    width: 16px;
+    height: 16px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background: #fff;
+    padding: 6px;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    color: #8F9582;
+}
+.filter-options {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    gap: 8px;            
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+    
+}
+.dropdown-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 168px;
+    background: #fff;
+    padding: 8px;
+    border: 1px solid #E6E6E6;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    
+}
+.dropdown-filter h2 {
+    font-size: 14px;
+    font-weight: 500;
+}
+.date-picker {
+    display: flex;
+    align-items: center;
+    width: 184px;
+    gap: 8px;
+    font-size: 14px;
+    
+    
+}
+.date-picker input {
+    outline: none;
+    border: none;
+}
+.analytics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+.analytics-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 22%;
+}
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+.card-title-h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3F4254
+}
+.card-number-h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0A0D14;
+}
+.button-card {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.button-card img {
+    width: 24px;
+    height: 24px;
+}
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.card-title img {
+    width: 24px;
+    height: 24px;
+}
+.card-footer {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: #54565B;
+}
+.percentage {
+    font-weight: 600;
+    color: #14AE5C;
+    border: #14AE5C solid 1px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: rgba(20, 174, 92, 0.1);
+}
+.percentage-minus {
+    font-weight: 600;
+    color: #FF0000;
+    border: #FF0000 solid 1px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: rgba(174, 20, 20, 0.1);
+}
+
+.map-view {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    overflow: hidden;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+}
+.map-sidebar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    background: #fff;
+    width: 100%;
+}
+.map-header {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+.map-header h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0A0D14;
+}
+.map-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 84px;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.map-dropdown h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #3B3D43;
+}
+.map-dropdown img {
+    width: 16px;
+    height: 16px;
+}
+.map-content {
+    position: relative;
+    background: #e0e0e0;
+    z-index: 0;
+}
+.footer {
+    padding: 24px 0;
+    text-align: center;
+    background: white;
+    border-top: 1px solid #E6E6E6;
+}
+.footer h2 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7e8299;
+}
+.footer-highlight {
+    font-weight: 600;
+    color: #00b4db;
+}
+
+.map-content {
+    position: relative;
+}
+.map-overlay {
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    z-index: 1;
+}
+.map-card {
+    display: flex;
+    justify-content: space-between;
+}
+.map-card-left, .map-card-right {
+    display: flex;
+    align-items: center;
+    
+}
+.map-buttons {
+    display: flex;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.map-status {
+    margin-left: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #5e6278;
+}
+.map-content {
+    position: absolute;
+}
+#map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.map-overlay {
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.map-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 8px;
+    width: 280px;
+}
+.map-buttons {
+    display: flex;
+    gap: 8px;
+}
+.map-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.map-status {
+    margin-left: 16px;
+    font-size: 12px;
+}
+.map-info {
+    padding: 16px;
+    border-radius: 8px;
+    width: 280px;
+    font-size: 10px;
+    font-weight: 500;
+    font-style: normal;
+    color: #A2845E;
+    
+}
+.map-info h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #A2845E;
+}
+.map-info h2 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #738299;
+}
+.map-info h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #181C32;
+}
+.order-summary {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order-summary h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #3B3D43;
+}
+.order-summary h2 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3B3D43;
+}
+
+.order-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+}
+.order-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 4px;
+    padding: 8px;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+}
+.order-item h4 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3B3D43;
+}
+.distance-info, .cost-info {
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.distance-info h2 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3B3D43;
+}
+.location-info {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.location-details {
+    display: flex;
+    justify-content: space-between;
+}
+.coordinate {
+    text-align: right;
+}
+        .details-button {
+    width: 100%;
+    padding: 8px;
+    gap: 4px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00B4DB;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.icon-frequence {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 290px;
+    height: 72px;
+    z-index: 3;
+}
+
+.button-options {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8299;
+    border: none;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    border: solid, 1px, #E6E6E6;
+}
+
+.button-options button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    padding: 12px;
+    width: 116px;
+    border-left: none;
+    border-right: none;
+    border: solid, 1px, #E6E6E6;
+}
+
+.button-options button:hover {
+    background-color: #00B4DB;
+    color: white;
+}
+
+
+.card-number-space-between {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #A1A5B7;
+    font-weight: 400px;
+}
+
+.chart-graph {
+    width: 100%;
+    height: 240px; /* Sesuaikan tinggi */
+    padding: 20px;
+    margin-top: 10px;
+    background: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#transportChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.chart-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chart-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #808080;
+}
+
+.chart-label strong {
+    margin-left: auto;
+    color: #000;
+    font-weight: bold;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.blue { background-color: blue; }
+.green { background-color: green; }
+.teal { background-color: teal; }
+
+
+</style>
